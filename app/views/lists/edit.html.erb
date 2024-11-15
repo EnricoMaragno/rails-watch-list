@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <h1>Editar nome da Lista</h1>
+
+  <%= form_with(model: @list, local: true) do |f| %>
+    <div class="mb-3">
+      <%= f.label :name, "Nome da Lista" %>
+      <%= f.text_field :name, class: "form-control", placeholder: "Digite o novo nome da lista" %>
+    </div>
+
+    <%= f.submit "Salvar Alterações", class: "btn btn-primary" %>
+  <% end %>
+
+  <a class="btn btn-secondary mt-3" href="<%= list_path(@list) %>">Cancelar</a>
+</div>

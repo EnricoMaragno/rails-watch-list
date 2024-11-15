@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h1>Criar Nova Lista</h1>
+
+  <%= form_with(model: @list, local: true) do |f| %>
+    <div class="mb-3">
+      <%= f.label :name, "Nome da Lista" %>
+      <%= f.text_field :name, class: "form-control", placeholder: "Digite o nome da sua lista" %>
+    </div>
+
+    <%= f.submit "Criar Lista", class: "btn btn-primary" %>
+  <% end %>
+
+  <!-- Botão Back to Lists -->
+  <a class="btn btn-secondary mt-3" href="<%= lists_path %>">Back to Lists</a>
+</div>

@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <h1>Add a Movie to <%= @list.name %></h1>
+
+  <%= form_with(model: [@list, @bookmark], local: true) do |f| %>
+    <div class="mb-3">
+      <%= f.label :movie_id, "Select a Movie" %>
+      <%= f.collection_select :movie_id, @movies, :id, :title, prompt: "Choose a movie" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :comment, "Comment" %>
+      <%= f.text_field :comment, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Add Movie", class: "btn btn-primary" %>
+  <% end %>
+
+  <!-- Botão para voltar à lista -->
+  <a class="btn btn-secondary mt-3" href="<%= list_path(@list) %>">Back to List</a>
+</div>
